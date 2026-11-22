@@ -1,0 +1,1136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shalini Akka | 25 & Golden</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --gold: #c5a15b;
+    --gold-dark: #9c7835;
+    --gold-light: #f3e4bb;
+    --cream: #fffaf0;
+    --ink: #796342;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink);
+    background: linear-gradient(180deg, #fffefa, #fff8e9, #fffefa);
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    font-style: italic;
+}
+
+#sparkle-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.sparkle {
+    position: absolute;
+    color: #d6b76c;
+    animation: fall linear infinite;
+    opacity: 0;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.9;
+    }
+    85% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* PASSWORD */
+
+#gate {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background:
+        radial-gradient(circle at center, #fff, #f7ebce, #fffaf0);
+    transition: opacity 1s;
+}
+
+.gate-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 45px 28px;
+    text-align: center;
+    background: #ffffffdd;
+    border: 1px solid #dec583;
+    border-radius: 25px;
+    box-shadow: 0 20px 70px #c7a25c25;
+}
+
+.gate-card h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    font-weight: normal;
+    color: var(--gold);
+}
+
+.gate-card p {
+    font-size: 1.3rem;
+    margin: 15px 0 25px;
+}
+
+.gate-card input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #dfc78e;
+    background: #fffefa;
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+}
+
+.main-btn {
+    margin-top: 20px;
+    padding: 13px 30px;
+    border: 0;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(135deg, #d8bd7c, #ae873a);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px #b28c4840;
+}
+
+#error {
+    display: none;
+    color: #b56c57;
+    margin-top: 12px;
+}
+
+/* LOADING REVEAL */
+
+#intro-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: #fffaf0;
+}
+
+#intro-loader h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 10vw, 6rem);
+    color: var(--gold);
+    font-weight: normal;
+    animation: glow 2s infinite alternate;
+}
+
+#intro-loader p {
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
+.loader-line {
+    height: 2px;
+    width: 0;
+    margin-top: 35px;
+    background: var(--gold);
+    animation: load 2.2s forwards;
+}
+
+@keyframes load {
+    to { width: 220px; }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #e9d59f; }
+    to { text-shadow: 0 0 30px #ddc37e; }
+}
+
+/* WEBSITE */
+
+#site {
+    display: none;
+    position: relative;
+    z-index: 2;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.small-heading {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #ad8a47;
+    font-size: 1rem;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(4rem, 14vw, 9rem);
+    font-weight: normal;
+    color: var(--gold);
+    margin: 20px 0 5px;
+    animation: glow 3s infinite alternate;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.hero-text {
+    max-width: 680px;
+    font-size: 1.45rem;
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
+.scroll {
+    color: #b18f4d;
+    margin-top: 55px;
+    animation: moveDown 1.8s infinite;
+}
+
+@keyframes moveDown {
+    50% { transform: translateY(10px); }
+}
+
+/* GIFT SECTION */
+
+.gifts {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    color: var(--gold);
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+.section-text {
+    font-size: 1.4rem;
+    margin: 12px 0 55px;
+}
+
+.gift-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 35px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.gift-card {
+    width: 290px;
+    background: #ffffffd9;
+    border: 1px solid #e6d4a3;
+    border-radius: 25px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 40px #bda15a18;
+    transition: 0.4s;
+}
+
+.gift-card:hover {
+    transform: translateY(-8px);
+}
+
+/* REAL GIFT BOX */
+
+.gift-stage {
+    height: 175px;
+    width: 200px;
+    position: relative;
+    margin: 0 auto 15px;
+    cursor: pointer;
+}
+
+.gift-body {
+    position: absolute;
+    width: 145px;
+    height: 100px;
+    bottom: 10px;
+    left: 27px;
+    background: linear-gradient(135deg, #e8d19a, #bd954b);
+    border-radius: 4px;
+    box-shadow: 0 12px 24px #b28d4a30;
+}
+
+.gift-body::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 100%;
+    left: 61px;
+    background: #fff8e7;
+}
+
+.gift-body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: 38px;
+    background: #fff8e7;
+}
+
+.gift-lid {
+    position: absolute;
+    width: 165px;
+    height: 30px;
+    left: 17px;
+    bottom: 110px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #ddc381, #b58c43);
+    transition: transform 0.8s cubic-bezier(.2,.8,.3,1);
+    z-index: 4;
+}
+
+.gift-lid::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 100%;
+    left: 71px;
+    background: #fff8e7;
+}
+
+.bow {
+    position: absolute;
+    width: 32px;
+    height: 26px;
+    border: 7px solid #c6a45e;
+    border-radius: 50%;
+    left: 65px;
+    top: -19px;
+    transform: rotate(-25deg);
+}
+
+.bow::after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 26px;
+    border: 7px solid #c6a45e;
+    border-radius: 50%;
+    left: 4px;
+    top: -4px;
+    transform: rotate(60deg);
+}
+
+.gift-number {
+    position: absolute;
+    width: 100%;
+    bottom: 24px;
+    z-index: 5;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    color: #967237;
+    font-size: 38px;
+}
+
+.gift-card.open .gift-lid {
+    transform: translate(15px, -70px) rotate(22deg);
+}
+
+.gift-card.open .gift-stage {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.gift-card h3 {
+    color: #b9934c;
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.gift-card p {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.tap {
+    font-size: 1.1rem;
+    color: #ad8b49;
+    margin-top: 15px;
+}
+
+/* BALLOONS */
+
+.balloon {
+    position: fixed;
+    z-index: 9500;
+    bottom: -100px;
+    font-size: 48px;
+    cursor: pointer;
+    user-select: none;
+    animation: rise 7s linear forwards;
+    font-style: normal;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) rotate(-8deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    50% { transform: translateY(-50vh) rotate(8deg); }
+    100% {
+        transform: translateY(-120vh) rotate(-10deg);
+        opacity: 0;
+    }
+}
+
+.balloon.popping {
+    animation: pop 0.25s forwards;
+}
+
+@keyframes pop {
+    50% { transform: scale(1.5); }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.pop-label {
+    position: fixed;
+    z-index: 9600;
+    color: #ad8a44;
+    font-size: 1.5rem;
+    pointer-events: none;
+    animation: popLabel 0.65s forwards;
+}
+
+@keyframes popLabel {
+    to {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+/* LETTERS */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 8000;
+    inset: 0;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    background: #51432e80;
+    backdrop-filter: blur(7px);
+}
+
+.letter {
+    background: linear-gradient(145deg, #fffefa, #fff8e8);
+    border: 1px solid #dfc783;
+    border-radius: 25px;
+    max-width: 590px;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 20px 60px #55432d40;
+    animation: letterOpen 0.5s ease;
+}
+
+@keyframes letterOpen {
+    from {
+        transform: translateY(40px) scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.letter h2 {
+    font-family: 'Great Vibes', cursive;
+    color: var(--gold);
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.letter-image {
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    margin: 0 auto 25px;
+    border-radius: 15px;
+    border: 1px solid #e6d5a7;
+    background: white;
+    box-shadow: 0 10px 30px #b9954c25;
+}
+
+.letter-message {
+    white-space: pre-line;
+    text-align: left;
+    font-size: 1.35rem;
+    line-height: 1.85;
+}
+
+.close-btn {
+    margin-top: 25px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 1px solid #d5bb7c;
+    color: #a27f3c;
+    background: #fff;
+    font-size: 1.15rem;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: #f8efd9;
+}
+
+/* FINAL */
+
+.final-section {
+    padding: 100px 20px 75px;
+    text-align: center;
+}
+
+.final-card {
+    max-width: 830px;
+    margin: auto;
+    padding: 45px 28px;
+    border: 1px solid #e2c681;
+    border-radius: 28px;
+    background: #ffffffce;
+    box-shadow: 0 15px 45px #d0b46a20;
+}
+
+.final-card h2 {
+    font-family: 'Great Vibes', cursive;
+    font-weight: normal;
+    color: var(--gold);
+    font-size: 4.2rem;
+    margin-bottom: 25px;
+}
+
+.final-card p {
+    font-size: 1.45rem;
+    line-height: 1.9;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    color: #b0934f;
+    font-size: 1.15rem;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    .gift-card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .section-title {
+        font-size: 3.3rem;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-text {
+        font-size: 1.25rem;
+    }
+
+    .final-card {
+        padding: 30px 20px;
+    }
+
+    .final-card h2 {
+        font-size: 3.4rem;
+    }
+
+    .final-card p {
+        font-size: 1.25rem;
+    }
+
+    .letter {
+        padding: 25px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="sparkle-layer"></div>
+
+<!-- PASSWORD -->
+
+<div id="gate">
+    <div class="gate-card">
+
+        <h1>Shalini Akka</h1>
+
+        <p>A little something, made just for you.</p>
+
+        <input
+            type="password"
+            id="pass"
+            placeholder="Enter your secret password"
+        >
+
+        <button class="main-btn" onclick="checkPassword()">
+            Open Your Surprise
+        </button>
+
+        <p id="error">That wasn't quite right. Try again.</p>
+
+    </div>
+</div>
+
+<!-- CINEMATIC LOADER -->
+
+<div id="intro-loader">
+    <h1>Preparing Something Special...</h1>
+    <p>A little birthday surprise for Shalini Akka</p>
+    <div class="loader-line"></div>
+</div>
+
+<!-- MAIN SITE -->
+
+<div id="site">
+
+    <section class="hero">
+
+        <div class="small-heading">
+            A little celebration of you
+        </div>
+
+        <h1>Happy Birthday</h1>
+
+        <h2>Shalini Akka</h2>
+
+        <p class="hero-text">
+            25 years of memories, laughter, stories and adventures.
+            <br><br>
+            And an entirely new chapter waiting to begin.
+            Today, the spotlight is all yours.
+        </p>
+
+        <div class="scroll">
+            Scroll down for your surprises ↓
+        </div>
+
+    </section>
+
+    <!-- GIFTS -->
+
+    <section class="gifts">
+
+        <h2 class="section-title">Three Little Gifts</h2>
+
+        <p class="section-text">
+            Each one comes with a little something to say.
+        </p>
+
+        <div class="gift-grid">
+
+            <!-- BOX 1 -->
+
+            <div class="gift-card" id="card0">
+
+                <div class="gift-stage" onclick="openGift(0)">
+
+                    <div class="gift-body">
+                        <div class="gift-number">1</div>
+                    </div>
+
+                    <div class="gift-lid">
+                        <div class="bow"></div>
+                    </div>
+
+                </div>
+
+                <h3>Gift One</h3>
+                <p>A birthday wish</p>
+                <div class="tap">Tap to open</div>
+
+            </div>
+
+            <!-- BOX 2 -->
+
+            <div class="gift-card" id="card1">
+
+                <div class="gift-stage" onclick="openGift(1)">
+
+                    <div class="gift-body">
+                        <div class="gift-number">2</div>
+                    </div>
+
+                    <div class="gift-lid">
+                        <div class="bow"></div>
+                    </div>
+
+                </div>
+
+                <h3>Gift Two</h3>
+                <p>A little appreciation</p>
+                <div class="tap">Tap to open</div>
+
+            </div>
+
+            <!-- BOX 3 -->
+
+            <div class="gift-card" id="card2">
+
+                <div class="gift-stage" onclick="openGift(2)">
+
+                    <div class="gift-body">
+                        <div class="gift-number">3</div>
+                    </div>
+
+                    <div class="gift-lid">
+                        <div class="bow"></div>
+                    </div>
+
+                </div>
+
+                <h3>Gift Three</h3>
+                <p>A little reminder</p>
+                <div class="tap">Tap to open</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FINAL LETTER -->
+
+    <section class="final-section">
+
+        <div class="final-card">
+
+            <h2>And One Last Thing...</h2>
+
+            <p>
+                Here's to 25 and everything that comes with it.
+                <br><br>
+                To new adventures, unexpected opportunities,
+                good people, unforgettable memories,
+                late-night laughter, random plans
+                and all the moments that make life special.
+                <br><br>
+                May you find happiness in the big achievements
+                and in the little everyday things.
+                May the coming year bring you closer
+                to everything you've been hoping for.
+            </p>
+
+            <br>
+
+            <p>
+                Keep being yourself.
+                Keep smiling.
+                Keep rocking.
+                And don't forget to have fun
+                while you're busy making your life amazing.
+            </p>
+
+            <br>
+
+            <p>
+                Happy 25th Birthday, Shalini Akka.
+                <br>
+                Wishing you a wonderful year ahead.
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer>
+        Made with gold, memories and good wishes.
+    </footer>
+
+</div>
+
+<!-- LETTER POPUP -->
+
+<div class="modal" id="modal">
+
+    <div class="letter">
+
+        <h2 id="letter-title"></h2>
+
+        <!-- PERMANENT PICTURE -->
+
+        <img
+            id="letter-photo"
+            class="letter-image"
+            src=""
+            alt="Birthday photograph"
+        >
+
+        <p class="letter-message" id="letter-text"></p>
+
+        <button class="close-btn" onclick="closeLetter()">
+            Close Letter
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+/* PASSWORD */
+
+function checkPassword() {
+
+    if (document.getElementById("pass").value === "BDS-TOPPER") {
+
+        document.getElementById("gate").style.opacity = "0";
+
+        setTimeout(() => {
+
+            document.getElementById("gate").style.display = "none";
+
+            const loader =
+                document.getElementById("intro-loader");
+
+            loader.style.display = "flex";
+
+            setTimeout(() => {
+
+                loader.style.opacity = "0";
+
+                setTimeout(() => {
+
+                    loader.style.display = "none";
+
+                    document.getElementById("site").style.display = "block";
+
+                }, 800);
+
+            }, 2500);
+
+        }, 800);
+
+    } else {
+
+        document.getElementById("error").style.display = "block";
+
+    }
+
+}
+
+document.getElementById("pass")
+.addEventListener("keydown", function(e) {
+
+    if (e.key === "Enter") {
+        checkPassword();
+    }
+
+});
+
+/* SPARKLES */
+
+const sparkleLayer =
+    document.getElementById("sparkle-layer");
+
+for (let i = 0; i < 50; i++) {
+
+    const s = document.createElement("span");
+
+    s.className = "sparkle";
+
+    s.textContent = Math.random() > 0.5 ? "✦" : "✧";
+
+    s.style.left = Math.random() * 100 + "%";
+
+    s.style.animationDuration =
+        (5 + Math.random() * 10) + "s";
+
+    s.style.animationDelay =
+        Math.random() * 10 + "s";
+
+    s.style.fontSize =
+        (8 + Math.random() * 14) + "px";
+
+    sparkleLayer.appendChild(s);
+
+}
+
+/* BALLOONS */
+
+function releaseBalloons() {
+
+    const balloons = ["🎈", "🎈", "🎈", "🎈", "🎈", "🎈", "🎈", "🎈"];
+
+    balloons.forEach((emoji, index) => {
+
+        setTimeout(() => {
+
+            const b = document.createElement("div");
+
+            b.className = "balloon";
+
+            b.innerText = emoji;
+
+            b.style.left = (5 + Math.random() * 90) + "%";
+
+            b.style.animationDuration =
+                (6 + Math.random() * 4) + "s";
+
+            b.addEventListener("click", function() {
+
+                if (b.classList.contains("popping")) return;
+
+                b.classList.add("popping");
+
+                const label = document.createElement("div");
+
+                label.className = "pop-label";
+
+                label.innerText = "POP! ✦";
+
+                const rect = b.getBoundingClientRect();
+
+                label.style.left = rect.left + "px";
+
+                label.style.top = rect.top + "px";
+
+                document.body.appendChild(label);
+
+                setTimeout(() => label.remove(), 650);
+
+                setTimeout(() => b.remove(), 250);
+
+            });
+
+            document.body.appendChild(b);
+
+            setTimeout(() => b.remove(), 11000);
+
+        }, index * 120);
+
+    });
+
+}
+
+/* MESSAGES */
+
+const gifts = [
+
+    {
+        title: "Happy 25th Birthday!",
+        photo: "gift1.png",
+        text: `Happy 25th Birthday, Shalini Akka!
+
+And just like that, you're 25! A whole new chapter, with hopefully plenty of good things waiting for you.
+
+I hope this year brings you happiness, good health, peace of mind, exciting opportunities, unexpected adventures and plenty of reasons to smile.
+
+May all the hard work you put in slowly turn into the things you've always wanted. May you meet wonderful people, visit places you've been dreaming of, create beautiful memories, and have days that make you think, "Okay, life is actually pretty great."
+
+Here's to more laughter, more achievements, more holidays, more good food, and less unnecessary stress.
+
+Enjoy being 25. Make the most of it, have fun, and don't forget to celebrate yourself once in a while.
+
+Have the best birthday and an amazing year ahead!`
+    },
+
+    {
+        title: "One of the Best Akkas",
+        photo: "gift2.png",
+        text: `Honestly, you're one of the best akka and friends anyone could ask for.
+
+You're kind, sporting, fun to be around, and someone with whom even random things can become entertaining. It's always nice having someone who can be both sensible and fun at the same time.
+
+And your pictures... you genuinely take some wonderful pictures. Too bad you deactivated Instagram though. Please activate it soon. Can't just let all those wonderful pictures disappear hahahaha.
+
+I still remember the Werewolf games. The accusations, the convincing everyone that you're innocent, the random suspicions and the chaos that somehow made the game even more entertaining.
+
+It's the little things like these that make friendships memorable.
+
+Thanks for being such a nice person and for being someone who's easy to talk to, laugh with, and have fun around.
+
+Stay the same sporting, kind and fun Shalini Akka.`
+    },
+
+    {
+        title: "Keep Rocking!",
+        photo: "gift3.png",
+        text: `A small reminder for you as you step into another year.
+
+Always be yourself. Don't feel like you need to change who you are just to fit into situations or impress people.
+
+Keep that fun side of you. Laugh loudly, try new things, go on random adventures, make spontaneous plans, take pictures, explore places and enjoy the experiences that come your way.
+
+Of course, work hard for the things you want. Chase your goals, build your future and make yourself proud.
+
+But don't forget to actually live your life along the way.
+
+You don't need every moment to be productive. Sometimes it's perfectly fine to relax, enjoy a good meal, play a ridiculous game, spend time with people you like or simply do absolutely nothing.
+
+Keep rocking, keep being you, and make this next chapter a memorable one.
+
+Wishing you lots of happiness, success, fun and wonderful experiences ahead!`
+    }
+
+];
+
+const opened = [false, false, false];
+
+/* OPEN GIFTS */
+
+function openGift(index) {
+
+    const card = document.getElementById("card" + index);
+
+    if (!opened[index]) {
+
+        opened[index] = true;
+
+        card.classList.add("open");
+
+        releaseBalloons();
+
+        setTimeout(() => showLetter(index), 700);
+
+    } else {
+
+        showLetter(index);
+
+    }
+
+}
+
+/* SHOW LETTER */
+
+function showLetter(index) {
+
+    const gift = gifts[index];
+
+    document.getElementById("letter-title").innerText =
+        gift.title;
+
+    document.getElementById("letter-text").innerText =
+        gift.text;
+
+    const photo =
+        document.getElementById("letter-photo");
+
+    photo.src = gift.photo;
+
+    photo.onerror = function() {
+
+        photo.style.display = "none";
+
+    };
+
+    photo.onload = function() {
+
+        photo.style.display = "block";
+
+    };
+
+    document.getElementById("modal").style.display = "flex";
+
+}
+
+/* CLOSE LETTER */
+
+function closeLetter() {
+
+    document.getElementById("modal").style.display = "none";
+
+}
+
+/* CLOSE WHEN TAPPING OUTSIDE LETTER */
+
+document.getElementById("modal").addEventListener("click", function(e) {
+
+    if (e.target === this) {
+        closeLetter();
+    }
+
+});
+
+/* ESCAPE KEY */
+
+document.addEventListener("keydown", function(e) {
+
+    if (e.key === "Escape") {
+        closeLetter();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
